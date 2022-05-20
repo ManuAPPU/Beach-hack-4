@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Macondo&family=Sora:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Lato:wght@700;900&family=Macondo&family=Sora:wght@300&display=swap');
+  *{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   }
+
+body{
+font-family: 'Lato', sans-serif;
+font-family: 'Macondo', cursive;
+font-family: 'Sora', sans-serif;
+ }
+ 
+
+
+/* :root {
+  --background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+  --first: #53f;
+  --second: #4553ff;
+  --third: #4f40ff;
+  --fourth: #25ddf5;
+  --fifth: #1fa2ff;
+}
+
+.container {
+  width: 100%;
+  height: 80wvh;
+  background: var(--background);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  transform: skewY(-10deg);
+  transform-origin: 0;
+  position: absolute;
+  z-index: -10;
+}
+
+.container span:nth-child(1) {
+  grid-column: span 1;
+  background: var(--first);
+}
+
+.container span:nth-child(2) {
+  grid-column: span 2;
+  background: var(--second);
+}
+
+.container span:nth-child(3) {
+  grid-column: span 2;
+  background: var(--third);
+}
+
+.container span:nth-child(4) {
+  grid-column: 6;
+  grid-row: 3;
+  background: var(--fourth);
+}
+
+.container span:nth-child(5) {
+  grid-column: span 2;
+  grid-row: 4;
+  background: var(--fifth);
+} */
+
+
+
+
+
+
+
+
+
+
+
+.container{
+  background-color:#ffffff;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -30;
+}
+
+.top-div{
+  height: 10vh;
+}
+.nav-div{
+    display: flex;
+    flex-direction: row;
+    background-color: #00A6CB;
+    height:10vh;
+    border-radius: 0 0 20px 20px;
+}
+.menubtn{ 
+    width: 10%;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 1.8rem;
+    border-radius: 10%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  .menubtn:hover{
+    background-color: white;
+    color:#00A6CB;
+  }
+.nav-link{
+    text-align: center;
+    width: 90%;
+    border-radius: 0 0 20px 0;
+    font-family: 'Cedarville Cursive', cursive;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: white;
+}
+
+/* sidebar section */
+
+.sidebar{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;  
+  z-index: 1;
+  position: fixed;
+  height: 100vh;
+  left: -100%;
+  transition-duration: 0.7s;
+  width: 60%;
+  z-index: 1000;
+  }
+.sidebar.active{
+  left: 0;
+}
+  .side-button{
+    background-color: #ffffff;
+    color: dodgerblue;
+    font-size: 1.2rem;
+    margin: 2% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    padding: 0.5rem 0;
+    border: none;
+    }
+    .side-button:hover{
+			background-color: #14caf3;
+			box-shadow: inset 7px 7px 7px 7px #80f3ff;
+			transition-duration: 0.5s;
+			cursor: pointer;
+      color:white;
+		}
+        /* .into{
+			background-color: #46941D;
+			text-align: center;
+			font-size: 1.5rem;
+			margin: 5% auto 0;
+			border-radius: 10%;
+            display: none;
+		} */
+    
+  
+	
+
+.carousel {
+  margin-top: 2%;  
+}
+
+.carousel-cell {
+    width: 80%;
+    margin-right: 20%;
+    background: #ffffff;
+    border-radius: 20px;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:5px solid #00A6CB;
+    box-shadow: 2px 8px 8px 4px rgba(20,20,20,0.4);
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+
+.inner-div1{
+  width: 90%;
+  height: 90%;
+}
+
+.file-btn{
+	background: #00b8cb;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 2%;
+  font-family: 'Lato', sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.file-btn:hover{
+  background-color:#31c970;
+  transition-duration: 0.3s;
+}
+
+.clk-btn{
+  background: #00818e;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 2%;
+  font-family: 'Lato', sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.clk-btn:hover{
+  background-color: #f39141;
+  transition-duration: 0.3s;
+}
+.json-result{
+  border-radius: 1px solid gray;
+  height: 42vh;
+  width: 100%;
+  background-color: rgb(226, 226, 226);
+  border-radius: 5px;
+  margin-top: 6%;
+}
+  
+
+
+
+.inner-div2{
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+#speech-txt-area{
+  height: 75%;
+  width: 100%;
+  font-size: 1rem;
+  background-color: rgb(226, 226, 226);
+  color: black;
+  margin: 5% auto;
+  border-radius: 5px;
+}
+.rounded {
+  /* display:block;
+  height: 10%;
+  width: 30%;
+  border-radius: 25px;
+  border: 3px solid rgb(64, 132, 201);
+  font-size: 1.5rem;
+  background-color: rgb(241, 50, 50);
+  font-weight: bolder;
+  color: white; 
+  margin: 5% auto; */
+  color: #ffffff;
+  cursor: pointer;
+	 width: 50%;
+	border-radius: 3.75rem;
+	font-size: 1.8rem;
+	font-weight: 600;
+	border: 1px solid #00818e;
+	background-image: linear-gradient(-180deg, #80f3ff 0%, #00A6CB 70%);
+  margin: 5% auto;
+	/* box-shadow: 0 0.6rem 0.6rem 0 #00818e,
+							0 -0.5rem 0.8rem #00A6CB inset,
+							0 0.45rem 0.1rem #bff9ff inset,
+							0 0.5rem 0.1rem 0 #80f3ff inset; */
+}
+.rounded:hover{
+  background-color:#00A6CB;
+  border: 1px solid white;
+}
+
+
+
+
+
+
+
+
+/* .down-div{
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+} */
+.ad-div{
+  background-color: #00A6CB;
+  width: 100%;
+  height: 15vh;
+  border-radius: 20px 20px 0 0;
+  margin-top: 5%;
+}
+input[type="file"] {
+    display: none;
+}
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+  <div class="container">
+     
+  
+
+
+
+  <div class="sidebar" id="sideid">
+    <!-- <button class="into">X</button> -->
+    <button class="side-button" id="homebtn">Home</button>
+    <button class="side-button" id="location-btn">Location</button>
+    <button class="side-button" id="whishlistbtn">Wishlist</button>
+    <button class="side-button" id="more-btn">More</button>
+</div>
+
+
+
+    <div class="nav-div">
+      <button class="menubtn"><i id="menuid" class="fa fa-bars"></i></button>
+      <div class="nav-link">HEAR IT</div>
+    </div>
+    
+
+
+
+    
+
+    <!-- Flickity HTML init -->
+    <div class="carousel"
+      data-flickity='{ "wrapAround": true }'>
+      <div class="carousel-cell">
+        <div class="inner-div1">
+          <div>
+            <form method="post" id="datafetch_form" enctype="multipart/form-data">
+                <label class="file-btn" style="margin-right: 2%;">
+                  <input type="file" id="data" accept=".wav">
+                  UPLOAD File
+              </label>
+              <button class="clk-btn" id="fetch">Predict</button>
+            </form>
+            
+          </div>
+          <i style="color: red; margin-top:5%;">Please upload your file in .wav format</i>
+          <form action="/towav" method="get">
+            <label for="" style="color: blue;">To .wav format:  </label><button type="submit" class="clk-btn">TO_WAV</button>
+          </form>
+          <!-- <a href="file:///D:/Anand%20Project%20Codes/hackathon/Hear_It/templates/to_wav.html">To convert your file to wav format 'click here'</a> -->
+          <div>
+              <div class="json-result">
+              </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="carousel-cell">
+        <div class="inner-div2">
+          <button class="rounded" onclick="speechTxt()">TAP</button>
+          <center><label for="">to speak!</label></center>
+          <div placeholder="output text here..." name="" id="speech-txt-area" cols="30" rows="10">
+            <p id="p"></p>
+          </div>
+      </div> 
+      </div>
+      <div class="carousel-cell">
+        <div>Teachable Machine Audio Model</div>
+<button type="button" onclick="init()">Start</button>
+<div id="label-container"></div>
+
+      </div>
+      <div class="carousel-cell">module 4</div>
+      <div class="carousel-cell">module 5</div>
+    </div>
+
+    <!-- <div class="down-div"> -->
+      <div class="ad-div">
+        
+      </div>
+    <!-- </div> -->
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#loading').hide();
+			var voicedata;
+			$("#data").change(function(e){ });
+			$("#fetch").click(function(e){
+				e.preventDefault();
+				if (voicedata == "") {
+					alert("No files selected.");
+				}
+				else{
+					let promise = new Promise(function(resolve, reject){
+						var reader = new FileReader();
+						reader.onload = function(){
+						  var arrayBuffer = reader.result;
+						  var base64str = btoa(arrayBuffer);
+						  voicedata  = 'data:audio/wav;base64,' + base64str;
+						  resolve(voicedata.replace('data:audio/wav;base64,', ''));	
+						};
+						reader.readAsBinaryString($('#data').get(0).files[0]);
+					});
+				
+					promise.then(result =>{
+						$('#loading').show();
+						$.ajax({
+							url : " ../predict",   //change url
+							type: "post",
+							mode: 'no-cors',
+							crossdomain: true,
+							withCredentials: false,
+							credentials: 'same-origin',
+							headers: {
+								'Content-Type': 'application/json;charset=UTF-8',
+								"Access-Control-Allow-Origin": "*"
+							},
+							data: JSON.stringify({sound:result}),
+							success: function(response){
+								$(".json-result").html("");
+								$(".json-result").html("<pre>" + JSON.stringify(response.Result,true,2) + "</pre>");
+								$('#loading').hide();
+							}
+						});
+					});
+				}
+			});
+		});
+	</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
+
+<script type="text/javascript">
+    
+    const URL = "https://teachablemachine.withgoogle.com/models/zo-jfTkvc/";
+
+    async function createModel() {
+        const checkpointURL = URL + "model.json"; 
+        const metadataURL = URL + "metadata.json"; 
+
+        const recognizer = speechCommands.create(
+            "BROWSER_FFT", 
+            undefined, 
+            checkpointURL,
+            metadataURL);
+
+        
+        await recognizer.ensureModelLoaded();
+
+        return recognizer;
+    }
+
+    async function init() {
+        const recognizer = await createModel();
+        const classLabels = recognizer.wordLabels(); 
+        const labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < classLabels.length; i++) {
+            labelContainer.appendChild(document.createElement("div"));
+        }
+
+        
+        recognizer.listen(result => {
+            const scores = result.scores; 
+            for (let i = 0; i < classLabels.length; i++) {
+                const classPrediction = classLabels[i] + ": " + result.scores[i].toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+                if (result.scores[i].toFixed(2)>=.95 && classLabels[i]=="car horn"){
+                  window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);;
+                }
+                else if (result.scores[i].toFixed(2)>=.80 && classLabels[i]=="Hello "){
+                    alert("SOMEBODY is calling You");
+                }
+                else if (result.scores[i].toFixed(2)>=.85 && classLabels[i]=="Excuse me"){
+                    alert("SOMEBODY is calling You");
+                }
+                else if (result.scores[i].toFixed(2)>=.99 && classLabels[i]=="Hey"){
+                    alert("SOMEBODY is calling You");
+                }
+                else if (result.scores[i].toFixed(2)>=.85 && classLabels[i]=="Stop"){
+                    alert("Stop walking......");
+                }
+                else if (result.scores[i].toFixed(2)>=.85 && classLabels[i]=="birds"){
+                    alert("Bird sound");
+                }
+                else if (result.scores[i].toFixed(2)>=.85 && classLabels[i]=="dog"){
+                    alert("Dog is barking");
+                }
+                else if (result.scores[i].toFixed(2)>=.92 && classLabels[i]=="hoi"){
+                    alert("SOMEBODY is calling You");
+                }
+                else if (result.scores[i].toFixed(2)>=.85 && classLabels[i]=="wild animal"){
+                    alert("wild animal");
+                }
+
+                
+            }
+        }, {
+            includeSpectrogram: true, 
+            probabilityThreshold: 0.75,
+            invokeCallbackOnNoiseAndUnknown: true,
+            overlapFactor: 0.50 
+        });
+
+        
+    }
+</script>
+
+  
+
+
+    <script>
+    let menu=document.querySelector('.menubtn');
+		let side=document.querySelector('.sidebar');
+		menu.addEventListener('click',function(){
+				side.classList.add('active');
+        window.addEventListener('click',function(event){
+          if(event.target.id!=='sideid' && event.target.id!=='menuid'){
+              side.classList.remove('active');
+          }
+    });
+       
+		});
+    
+    
+    
+		// into.addEventListener('click',function(){
+		// 	side.classList.remove('active');
+		// })
+    </script>
+    <script>
+      function speechTxt(){
+        var speech = true;
+        window.SpeechRecognition = window.SpeechRecognition||window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        recognition.interimResults = true;
+        const words = document.querySelector('#speech-txt-area');
+        words.appendChild(p);
+  
+          recognition.addEventListener('result', e => {
+          const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('')
+  
+          document.getElementById("speech-txt-area").innerHTML = transcript;
+          console.log(transcript);
+        });
+        
+        if (speech == true) {
+          recognition.start();
+          recognition.addEventListener('end', recognition.start);
+        }
+  
+      }
+      </script>
+</body>
+</html>
