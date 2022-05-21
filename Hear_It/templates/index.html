@@ -504,7 +504,7 @@ input[type="file"] {
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
 
 <script type="text/javascript">
-  const URL = "https://teachablemachine.withgoogle.com/models/ntpi15TgO/";
+  const URL = "https://teachablemachine.withgoogle.com/models/wfVW9tJHS/";
 
   async function createModel() {
       const checkpointURL = URL + "model.json"; // model topology
@@ -547,7 +547,7 @@ input[type="file"] {
                   window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);
                   alert("A vehicle is behind you");
               }
-              else if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="calling"){
+              else if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="siren"){
                   alert("Ambulance ahead");
               }
           }
