@@ -540,14 +540,14 @@ input[type="file"] {
               const classPrediction = classLabels[i] + ": " + result.scores[i].toFixed(2);
               labelContainer.childNodes[i].innerHTML = classPrediction;
               if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="calling"){
-                  window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100])
-                  alert("Somebody is calling you");
+                  window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);
+                  alert("somebody is calling you")
               }
-              if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="carhorn"){
-                  window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100])
+              else if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="carhorn"){
+                  window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);
                   alert("A vehicle is behind you");
               }
-              if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="calling"){
+              else if(result.scores[i].toFixed(2)>=.95 && classLabels[i]=="calling"){
                   alert("Ambulance ahead");
               }
           }
